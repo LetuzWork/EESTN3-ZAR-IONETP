@@ -1,0 +1,92 @@
+const SchemaReporte = {
+  momento_llamada: Date,
+  momento_atencion: Date,
+  paciente: String,
+  enfermero: String,
+  area: String,
+  habitacion: Number,
+  origenDeLlamada: String,
+  urgente: Boolean,
+};
+
+const ejemploReporte = {
+  momento_llamada: new Date().toISOString(),
+  momento_atencion: new Date().toISOString(),
+  paciente: "45600768",
+  enfermero: "37890678",
+  area: "areaid02",
+  habitacion: 201,
+  origenDeLlamada: "cama",
+  urgente: false,
+};
+
+const SchemaPaciente = {
+  id: String,
+  nombre: String,
+  direccion: String,
+  fecha_nac: String,
+  telefono: String,
+  contacto_emergencia: {
+    nombre: String,
+    dni: String,
+    relacion: String,
+    telefono: String,
+  },
+  habitacion: Number,
+  tipo_sangre: String,
+  hist_clinico: [
+    {
+      id: String,
+      entrada: Date,
+      salida: Date,
+      enfermero: String,
+      razon: String,
+    },
+  ],
+  epecificaciones: [String],
+  credencial_medica: {
+    obra_social: String,
+    nro_socio: String,
+    plan: String,
+  },
+};
+
+const ejemploPaciente = {
+  id: "46134908",
+  nombre: "Marcos Nuñez",
+  direccion: "Villa Urquiza, Saavedra 490",
+  fecha_nac: new Date("10/10/2005").toISOString(),
+  telefono: "+54 3567 675690",
+  contacto_emergencia: {
+    nombre: "Juana Nuñez",
+    dni: "40234586",
+    relacion: "hermana",
+    telefono: "+54 3567 678968",
+  },
+  habitacion: 301,
+  tipo_sangre: "A+",
+  hist_clinico: [],
+  epecificaciones: ["Alergico a la penicilina"],
+  credencial_medica: {
+    obra_social: "IOMA",
+    nro_socio: "4456 7890 5678 6788",
+    plan: "general",
+  },
+};
+
+const SchemaArea = {
+  id: String,
+  nombre: String,
+  enfermeros: Array,
+  pacientes: Array,
+  forma_de_llamado: String,
+  activo: Boolean,
+};
+
+const EjemploArea = {
+  nombre: "Urgencias",
+  enfermeros: ["26789037", "30402408"],
+  pacientes: ["38134340"],
+  forma_de_llamado: "Boton",
+  activo: true,
+};
